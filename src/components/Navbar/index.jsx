@@ -5,7 +5,7 @@ import Button from '../Button'
 function Navbar() {
   const menu = ['Rasearch', 'Climate', 'Service', 'About Us']
   return (
-    <div className='flex items-center justify-between py-2 px-12'>
+    <div className='flex items-center justify-between py-6 px-12'>
       <div className='flex items-center'>
         <Logo />
       </div>
