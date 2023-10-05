@@ -18,7 +18,7 @@ function HeroSection() {
       <div className='flex justify-center'>
         <div className='relative group justify-center w-[96%] h-96 overflow-hidden rounded-md'>
           <div className='flex justify-center items-center'>
-            <Image src={HeroImage} className='w-full h-full object-cover' />
+            <Image src={HeroImage} className='w-full h-full object-cover' alt='hero image' />
           </div>
           <div className='absolute inset-0 flex items-center gap-x-4 justify-center text-gray-800'>
             <div className='w-1/2'>
@@ -47,7 +47,7 @@ function HeroSection() {
       </div>
       <div className='bg-white flex justify-between drop-shadow-md rounded-md p-8 w-3/4 mx-auto -mt-10 z-20 relative'>
         {main1.map((key, i) => (
-          <div className='flex md:w-1/2'>
+          <div className='flex md:w-1/2' key={i}>
             <div key={i} className='flex flex-col gap-y-1-2'>
               <div className='grid grid-cols-2 gap-x-5'>
                 <p className='font-medium text-blue-500'>{key}</p>
@@ -65,15 +65,6 @@ function HeroSection() {
             }
           </div>
         ))}
-        {/* <div className='flex'>
-          <div className='flex items-center'>
-            <TbMinusVertical className='text-4xl text-gray-400' />
-            <div>
-              <p className='font-medium'>Newyork</p>
-              <p>12</p>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   )

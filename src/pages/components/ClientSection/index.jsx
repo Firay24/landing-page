@@ -20,7 +20,7 @@ function ClientSection() {
                 <p className='w-1/2 text-sm text-gray-300'>Happy customer with our service</p>
             </div>
         </div>
-        <div class="h-0.5 w-[90%] bg-gray-500 mx-auto my-10"></div>
+        <div className="h-0.5 w-[90%] bg-gray-500 mx-auto my-10"></div>
         <div className='flex justify-between py-6 px-16'>
             <h3 className='text-3xl w-1/2 font-semibold'>Where Comfort Meets Conveniece</h3>
             <p className='w-1/2 text-gray-400'>

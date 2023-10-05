@@ -30,7 +30,7 @@ function Card() {
                 <div className='py-2 px-4'>
                     <p className='text-xl font-medium text-blue-600 mt-3'>{card.title}</p>
                     <p className='font-medium text-gray-700'>{card.season}</p>
-                    <div class="h-0.5 w-full bg-gray-300 mx-auto mt-4"></div>
+                    <div className="h-0.5 w-full bg-gray-300 mx-auto mt-4"></div>
                 </div>
                 <div className='mt-3 text-gray-800 pb-4 px-4'>
                     <div className='flex items-center gap-x-2'>

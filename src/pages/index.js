@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import HeroSection from './components/Hero'
@@ -13,14 +12,12 @@ import { ApiProvider } from '@/contexts/apiContext';
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getServerSideProps() {
-  // Lakukan pemanggilan API GET di sini
-  // Contoh:
   const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=7ca37c9f490685ad74404095d9bc12e4');
   const apiData = await response.json();
 
   return {
     props: {
-      apiData, // Atur hasil pemanggilan API sebagai prop
+      apiData,
     },
   };
 }

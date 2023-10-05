@@ -49,7 +49,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-        <div class="h-0.5 w-full bg-gray-500 mx-auto mt-8 mb-6"></div>
+        <div className="h-0.5 w-full bg-gray-500 mx-auto mt-8 mb-6"></div>
         <div className='text-center text-sm text-gray-500'>
             <p>Copyright © 2023 Weather</p>
         </div>
