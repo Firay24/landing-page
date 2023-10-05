@@ -47,7 +47,7 @@ function HeroSection() {
       </div>
       <div className='bg-white flex justify-between drop-shadow-md rounded-md p-8 w-3/4 mx-auto -mt-10 z-20 relative'>
         {main1.map((key, i) => (
-          <div className='flex'>
+          <div className='flex md:w-1/2'>
             <div key={i} className='flex flex-col gap-y-1-2'>
               <div className='grid grid-cols-2 gap-x-5'>
                 <p className='font-medium text-blue-500'>{key}</p>
@@ -60,7 +60,7 @@ function HeroSection() {
             </div>
             {
               i === 3 ? null : (
-                <TbMinusVertical className='text-4xl text-gray-200' />
+                <TbMinusVertical className='text-4xl text-gray-200 md:hidden' />
               )
             }
           </div>

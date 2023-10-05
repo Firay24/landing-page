@@ -3,7 +3,7 @@ import { PiNotionLogoBold, PiPaperPlaneBold, PiPhosphorLogoBold, PiRecordBold } 
 
 function LogoSection() {
   return (
-    <div className='flex justify-center gap-x-10 my-16'>
+    <div className='flex justify-center gap-x-10 my-16 flex-wrap mx-5 gap-y-6'>
         <div className='flex text-gray-400 gap-x-1'>
             <PiNotionLogoBold className='text-4xl' />
             <p className='font-medium text-xl'>Company West</p>

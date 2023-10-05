@@ -9,8 +9,8 @@ function Navbar() {
       <div className='flex items-center'>
         <Logo />
       </div>
-      <div>
-        <ul className='flex gap-x-8'>
+      <div className='hidden sm:block'>
+        <ul className='flex gap-x-8 md:gap-x-3 space-x-4'>
           {
             menu.map((item, index) => (
               <li key={index} className='hover:text-blue-700 cursor-pointer'>
