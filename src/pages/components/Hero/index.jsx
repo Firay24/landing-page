@@ -31,15 +31,15 @@ function HeroSection() {
             <div className=' bg-white rounded-xl p-5 drop-shadow-md'>
               <div className='flex justify-center items-center gap-x-2 text-gray-400'>
                 <ImLocation />
-                <p>{apiData.name}</p>
+                <p>{apiData && apiData.nam && apiData.name}</p>
               </div>
               <div className='flex flex-col items-center'>
                 <div className='flex items-center gap-x-2'>
                   <AiFillCloud className='text-gray-200 text-8xl' />
                   <p className='text-3xl'>235 &deg;K</p>
                 </div>
-                <p className='font-semibold text-blue-500'>{apiData.weather[0].main}</p>
-                <p className='text-gray-400'>{`Lon-${apiData.coord.lon} - Lat-${apiData.coord.lat}`}</p>
+                <p className='font-semibold text-blue-500'>{apiData && apiData.weather && apiData.weather[0].main}</p>
+                <p className='text-gray-400'>{`Lon-${apiData && apiData.coord && apiData.coord.lon && apiData.coord.lon} - Lat-${apiData && apiData.coord && apiData.coord.lat && apiData.coord.lat}`}</p>
               </div>
             </div>
           </div>
