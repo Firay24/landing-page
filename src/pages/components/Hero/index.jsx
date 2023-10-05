@@ -31,7 +31,7 @@ function HeroSection() {
             <div className=' bg-white rounded-xl p-5 drop-shadow-md'>
               <div className='flex justify-center items-center gap-x-2 text-gray-400'>
                 <ImLocation />
-                <p>{apiData && apiData.nam && apiData.name}</p>
+                <p>{apiData && apiData.name && apiData.name}</p>
               </div>
               <div className='flex flex-col items-center'>
                 <div className='flex items-center gap-x-2'>
