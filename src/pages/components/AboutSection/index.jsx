@@ -26,8 +26,8 @@ function About() {
             </div>
             <div className='bg-white drop-shadow-md absolute bottom-6 ml-8 p-6 rounded-md w-1/4 h-36'>
                 <p className='text-3xl font-semibold'>Wind</p>
-                <p className='text-gray-500'>{`speed ${apiData.wind.speed}`}</p>
-                <p className='text-gray-500'>{`deg ${apiData.wind.deg}`}</p>
+                <p className='text-gray-500'>{apiData && apiData.wind && `speed ${apiData.wind.speed}`}</p>
+                <p className='text-gray-500'>{apiData && apiData.wind && `deg ${apiData.wind.deg}`}</p>
             </div>
         </div>
     </div>
