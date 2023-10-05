@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
-import CraigImage from '@/assets/craig-adderley.jpg'
 import Image from 'next/image'
 import { IoLocationOutline } from "react-icons/io5";
 import { CiTempHigh } from "react-icons/ci";
 import { PiWindBold } from "react-icons/pi";
 import { MdPersonOutline } from "react-icons/md";
+import { cardContent } from "@/util/dataCard"
 
 function Card() {
   return (
@@ -19,90 +19,42 @@ function Card() {
             </p>
         </div>
         <div className='flex justify-center gap-x-10 flex-wrap'>
-            <div className='mt-10 w-fit bg-white drop-shadow-md rounded-md'>
-                <Image src={CraigImage} className='w-64 h-auto rounded-t-lg drop-shadow-xl' />
+          {
+            cardContent.map((card, index) => (
+              <div key={index} className='mt-10 w-fit bg-white drop-shadow-md rounded-md'>
+                <div className='w-64 h-36'>
+                  <div className='w-full h-full rounded-t-lg drop-shadow-xl overflow-hidden'>
+                    <Image src={card.src} alt='Card' className='object-cover object-center w-full h-full' />
+                  </div>
+                </div>
                 <div className='py-2 px-4'>
-                    <p className='text-xl font-medium text-blue-600 mt-3'>Craig Adderley</p>
-                    <p className='font-medium text-gray-700'>Musim Gugur</p>
+                    <p className='text-xl font-medium text-blue-600 mt-3'>{card.title}</p>
+                    <p className='font-medium text-gray-700'>{card.season}</p>
                     <div class="h-0.5 w-full bg-gray-300 mx-auto mt-4"></div>
                 </div>
                 <div className='mt-3 text-gray-800 pb-4 px-4'>
                     <div className='flex items-center gap-x-2'>
                         <IoLocationOutline />
-                        <p className='text-sm'>Noakhali, Bangladesh</p>
+                        <p className='text-sm'>{card.location}</p>
                     </div>
                     <div className='flex justify-between mt-3'>
                         <div className='flex items-center gap-x-1'>
                             <CiTempHigh className='text-lg' />
-                            <p className='text-sm'>30 &deg;C</p>
+                            <p className='text-sm'>{card.temp}</p>
                         </div>
                         <div className='flex items-center gap-x-1'>
                             <MdPersonOutline className='text-lg' />
-                            <p className='text-sm'>Safe</p>
+                            <p className='text-sm'>{card.status}</p>
                         </div>
                         <div className='flex items-center gap-x-1'>
                             <PiWindBold className='text-lg' />
-                            <p className='text-sm'>20 m/s</p>
+                            <p className='text-sm'>{card.wind}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className='mt-10 w-fit bg-white drop-shadow-md rounded-md'>
-                <Image src={CraigImage} className='w-64 h-auto rounded-t-lg drop-shadow-xl' />
-                <div className='py-2 px-4'>
-                    <p className='text-xl font-medium text-blue-600 mt-3'>Craig Adderley</p>
-                    <p className='font-medium text-gray-700'>Musim Gugur</p>
-                    <div class="h-0.5 w-full bg-gray-300 mx-auto mt-4"></div>
-                </div>
-                <div className='mt-3 text-gray-800 pb-4 px-4'>
-                    <div className='flex items-center gap-x-2'>
-                        <IoLocationOutline />
-                        <p className='text-sm'>Noakhali, Bangladesh</p>
-                    </div>
-                    <div className='flex justify-between mt-3'>
-                        <div className='flex items-center gap-x-1'>
-                            <CiTempHigh className='text-lg' />
-                            <p className='text-sm'>30 &deg;C</p>
-                        </div>
-                        <div className='flex items-center gap-x-1'>
-                            <MdPersonOutline className='text-lg' />
-                            <p className='text-sm'>Safe</p>
-                        </div>
-                        <div className='flex items-center gap-x-1'>
-                            <PiWindBold className='text-lg' />
-                            <p className='text-sm'>20 m/s</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='mt-10 w-fit bg-white drop-shadow-md rounded-md'>
-                <Image src={CraigImage} className='w-64 h-auto rounded-t-lg drop-shadow-xl' />
-                <div className='py-2 px-4'>
-                    <p className='text-xl font-medium text-blue-600 mt-3'>Craig Adderley</p>
-                    <p className='font-medium text-gray-700'>Musim Gugur</p>
-                    <div class="h-0.5 w-full bg-gray-300 mx-auto mt-4"></div>
-                </div>
-                <div className='mt-3 text-gray-800 pb-4 px-4'>
-                    <div className='flex items-center gap-x-2'>
-                        <IoLocationOutline />
-                        <p className='text-sm'>Noakhali, Bangladesh</p>
-                    </div>
-                    <div className='flex justify-between mt-3'>
-                        <div className='flex items-center gap-x-1'>
-                            <CiTempHigh className='text-lg' />
-                            <p className='text-sm'>30 &deg;C</p>
-                        </div>
-                        <div className='flex items-center gap-x-1'>
-                            <MdPersonOutline className='text-lg' />
-                            <p className='text-sm'>Safe</p>
-                        </div>
-                        <div className='flex items-center gap-x-1'>
-                            <PiWindBold className='text-lg' />
-                            <p className='text-sm'>20 m/s</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            ))
+          }
         </div>
         
     </div>
