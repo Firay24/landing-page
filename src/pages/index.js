@@ -8,12 +8,26 @@ import ClientSection from './components/ClientSection'
 import Card from './components/CardSection'
 import Comment from './components/Comments'
 import Footer from '@/components/Footer'
+import { ApiProvider } from '@/contexts/apiContext';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export async function getServerSideProps() {
+  // Lakukan pemanggilan API GET di sini
+  // Contoh:
+  const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=7ca37c9f490685ad74404095d9bc12e4');
+  const apiData = await response.json();
+
+  return {
+    props: {
+      apiData, // Atur hasil pemanggilan API sebagai prop
+    },
+  };
+}
+
+export default function Home({ apiData }) {
   return (
-    <div>
+    <ApiProvider initialApiData={apiData}>
       <header>
         <Navbar />
       </header>
@@ -40,6 +54,6 @@ export default function Home() {
       <footer>
         <Footer />
       </footer>
-    </div>
+    </ApiProvider>
   )
 }

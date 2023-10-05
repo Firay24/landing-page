@@ -9,7 +9,7 @@ function Footer() {
     <div className='bg-gray-900 text-white py-8 px-16 '>
         <div className='grid grid-cols-5 gap-x-10'>
             <div className='grid col-span-2'>
-                <div className='flex flex-col gap-y-5 w-3/4'>
+                <div className='flex flex-col gap-y-5 w-3/4 justify-between'>
                     <div className='flex items-center gap-x-2'>
                         <Image src={LogoImage} className='w-10 h-10' />
                         <p className='font-medium'>Wheater</p>

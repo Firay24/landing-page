@@ -3,8 +3,12 @@ import React from 'react'
 import Image from 'next/image'
 import HeroImage from '@/assets/hero.jpg'
 import { TbMinusVertical } from "react-icons/tb";
+import { useApi } from '@/contexts/apiContext';
+import { AiFillCloud } from "react-icons/ai";
+import { ImLocation } from "react-icons/im";
 
 function HeroSection() {
+  const apiData = useApi()
   return (
     <div>
       <div className='flex justify-center'>
@@ -12,12 +16,28 @@ function HeroSection() {
           <div className='flex justify-center items-center'>
             <Image src={HeroImage} className='w-full h-full object-cover' />
           </div>
-          <div className='absolute inset-0 flex flex-col gap-y-3 items-center justify-center text-gray-800'>
-            <h1 className='font-medium text-5xl'>Provide you a world wide weather forecast</h1>
-            <p>
-              The world Most Accurate Forecaster. With extreme weather on the rise. It so easy to
-              receive the weather conditions in your current location
-            </p>
+          <div className='absolute inset-0 flex items-center justify-center text-gray-800'>
+            <div className='w-1/2'>
+              <h1 className='font-medium text-5xl mb-3'>Provide you a world wide <span className='text-blue-800 font-bold'>weather</span> forecast</h1>
+              <p>
+                The world Most Accurate Forecaster. With extreme weather on the rise. It so easy to
+                receive the weather conditions in your current location
+              </p>
+            </div>
+            <div className=' bg-white rounded-xl p-5 drop-shadow-md'>
+              <div className='flex justify-center items-center gap-x-2 text-gray-400'>
+                <ImLocation />
+                <p>{apiData.name}</p>
+              </div>
+              <div className='flex flex-col items-center'>
+                <div className='flex items-center gap-x-2'>
+                  <AiFillCloud className='text-gray-200 text-8xl' />
+                  <p className='text-3xl'>235 &deg;K</p>
+                </div>
+                <p className='font-semibold text-blue-500'>{apiData.weather[0].main}</p>
+                <p className='text-gray-400'>{`Lon-${apiData.coord.lon} - Lat-${apiData.coord.lat}`}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
